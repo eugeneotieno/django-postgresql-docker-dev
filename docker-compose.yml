@@ -1,0 +1,22 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: zuri
+      POSTGRES_DB: zuri
+      POSTGRES_PASS: zuri1234
+    volumes:
+      - pgdata:/var/lib/posgresql/data
+  zuri:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./zuri:/zuri
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+volumes:
+  pgdata:

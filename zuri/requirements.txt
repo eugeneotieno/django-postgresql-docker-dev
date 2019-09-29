@@ -1,0 +1,6 @@
+Django>=2.1.3,<2.2.0
+psycopg2>=2.7,<3.0
+django-crispy-forms==1.7.2
+djangorestframework==3.8.2
+djangorestframework-jwt==1.11.0
+Pillow==5.2.0

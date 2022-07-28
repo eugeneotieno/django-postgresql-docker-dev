@@ -3,8 +3,8 @@ services:
   db:
     image: postgres
     environment:
-      POSTGRES_USER: zuri
-      POSTGRES_DB: zuri
+      POSTGRES_USER: src
+      POSTGRES_DB: src
       POSTGRES_PASS: zuri1234
     volumes:
       - pgdata:/var/lib/posgresql/data
@@ -14,7 +14,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./zuri:/zuri
+      - ./src:/src
     command: python manage.py runserver 0.0.0.0:8000
     depends_on:
       - db

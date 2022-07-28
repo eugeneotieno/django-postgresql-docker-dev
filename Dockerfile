@@ -9,13 +9,13 @@ LABEL Author="CodeGenes"
 ENV PYTHONBUFFERED 1
 
 #directory to store app source code
-RUN mkdir /zuri
+RUN mkdir /src
 
 #switch to /app directory so that everything runs from here
-WORKDIR /zuri
+WORKDIR /app
 
 #copy the app code to image working directory
-COPY ./zuri /zuri
+COPY app /app
 
 #let pip install required packages
 RUN pip install -r requirements.txt
